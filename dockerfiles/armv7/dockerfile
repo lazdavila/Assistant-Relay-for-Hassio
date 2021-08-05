@@ -9,7 +9,7 @@ RUN mkdir /assistant_relay \
 
 WORKDIR /assistant_relay
 
-RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/release.zip \
+RUN wget https://github.com/lazdavila/assistant-relay/releases/download/0.7.4-patch01/release.zip \
 && unzip release.zip \
 && rm release.zip \
 && sed -i -e 's#./bin/config.json#/data/config.json#g' /assistant_relay/helpers/server.js \
@@ -25,6 +25,6 @@ RUN wget https://github.com/greghesp/assistant-relay/releases/download/v3.2.0/re
 && npm i
 
 WORKDIR /
-RUN wget https://raw.githubusercontent.com/Apipa169/Assistant-Relay-for-Hassio/master/dockerfiles/armv7/run.sh
+RUN wget https://raw.githubusercontent.com/lazdavila/Assistant-Relay-for-Hassio/master/dockerfiles/armv7/run.sh
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
